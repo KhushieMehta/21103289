@@ -1,7 +1,20 @@
-import logo from './logo.svg';
+
 import './App.css';
+import React, {useState, useEffect} from "react";
 
 function App() {
+  const url ="https://20.244.56.144/test/register"
+  const[data,setData]= useState([]);
+
+
+  useEffect(()=>{
+    ( () => {
+      const res = fetch(url);
+      const d = res.json();
+      return setData(d);
+    })();
+  },[]
+  );
   return (
     <div className="App">
       <header className="App-header">
